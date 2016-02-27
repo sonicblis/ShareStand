@@ -1,4 +1,4 @@
-var baseUrl = "[firebaseio.appname]";
+var baseUrl = 'https://sharestand.firebaseapp.io';
 
 app.constant('firebase', {
     root: new Firebase(baseUrl),

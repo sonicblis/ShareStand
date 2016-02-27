@@ -1,12 +1,13 @@
 {
-  "firebase": "firebaseappname",
+  "firebase": "sharestand",
   "public": ".",
   "ignore": [
-    "app/**/*.js",
-    "app/**/*.less",
     "firebase.json",
     "**/.*",
-    "**/node_modules/**",
-    "thirdParty/**"
-  ]
+    "**/node_modules/**"
+  ],
+  "rewrites": [{
+    "source": "**",
+    "destination": "/index.html"
+  }]
 }
