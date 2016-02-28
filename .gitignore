@@ -1,1 +1,5 @@
-.idea/.name
+.idea/
+app/firebase.js~
+dist/
+index.html~
+node_modules/
