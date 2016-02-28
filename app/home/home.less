@@ -1,0 +1,57 @@
+@import '../../styles/layout';
+
+home{
+	.block;
+	text-align: center;
+
+	h1{
+		color: #E04427;
+		font-weight: 400;
+		font-size: 1.5em;
+		margin-bottom: 20px;
+	}
+
+	hero{
+		.block;
+
+		div {
+			text-align: center;
+			height: 385px;
+			overflow: hidden !important;
+			position: relative;
+			cursor: pointer;
+
+			&:first-child{
+				.inline-block;
+				float:left;
+				text-align: center;
+				width: calc(~'50% - 1px');
+				border-right: solid 1px black;
+			}
+			&:last-child{
+				.inline-block;
+				text-align: center;
+				float: right;
+				width: 50%;
+			}
+
+			label{
+				.block;
+				text-align: center;
+				font-weight: 300;
+				background: rgba(0, 0, 0, 0.5);
+				color: white;
+				position: absolute;
+				font-size: 24pt;
+				top: 0;
+				left: 0;
+				right: 0;
+				padding: 10px;
+			}
+
+			img{
+				width: 100%;
+			}
+		}
+	}
+}

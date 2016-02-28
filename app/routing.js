@@ -8,7 +8,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
 
 	$stateProvider
 		.state('wantFood', {
-			url: '/wantfood',
+			url: '/wantFood',
 			template: '<want-food></want-food>'
 		})
 		.state('home', {
