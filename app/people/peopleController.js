@@ -1,16 +1,22 @@
-app.controller('peopleController', ['$scope', 'peopleProvider', '$rootScope', 'activityProvider', 'logProvider', function ($scope, peopleProvider, $rootScope, activityProvider, logProvider) {
-    $scope.people = peopleProvider.people;
-    $scope.registerUser = peopleProvider.registerUser;
+(function () {
+    'use strict';
 
-    $scope.selectPerson = function(person){
-        $rootScope.selectedPerson = person;
-        $rootScope.selectedDate = new Date();
-        activityProvider.reconcileDaysActivities();
-    };
+    var app = angular.module ('ShareStand');
 
-    peopleProvider.peopleLoaded.then(function(){
-        if ($scope.people.length > 0) {
-            $rootScope.selectedPerson = $scope.people[0];
-        }
-    });
-}]);
+    app.controller ('peopleController', ['$scope', 'peopleService', '$rootScope', 'activityProvider', 'logProvider', function ($scope, peopleService, $rootScope, activityProvider, logProvider) {
+        $scope.people = peopleService.people;
+        $scope.registerUser = peopleService.registerUser;
+
+        $scope.selectPerson = function (person) {
+            $rootScope.selectedPerson = person;
+            $rootScope.selectedDate = new Date ();
+            activityProvider.reconcileDaysActivities ();
+        };
+
+        peopleService.peopleLoaded.then (function () {
+            if ($scope.people.length > 0) {
+                $rootScope.selectedPerson = $scope.people[0];
+            }
+        });
+    }]);
+}());

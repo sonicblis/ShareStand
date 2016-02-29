@@ -1,3 +1,5 @@
+@import 'colors';
+
 .block{
   display: block;
   overflow: auto;
@@ -6,4 +8,46 @@
 .inline-block{
   display: inline-block;
   overflow: auto;
+}
+
+h4{
+  padding: 0;
+  margin: 0 0 15px;
+  font-weight: 400;
+}
+
+heading{
+  color: @headers;
+  font-weight: 400;
+  font-size: 1.2em;
+}
+
+.control-label{
+  font-weight: 400;
+}
+
+input[type='text']{
+  font-size: 1.1em;
+  height: auto;
+  padding-top: 10px;
+  line-height: 1.1em;
+}
+
+button{
+  border: solid 1px #ccc;
+  background: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+
+  &.less-bright{
+    color: white;
+    background: @less-bright;
+    border-color: darken(@less-bright, 15%);
+  }
+
+  &:disabled{
+    color: #bbb;
+    background: #ddd;
+    border-color: #ccc;
+  }
 }

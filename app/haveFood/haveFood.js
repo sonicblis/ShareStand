@@ -3,14 +3,15 @@
 
 	var app = angular.module ('ShareStand');
 
-	app.directive ("home", [function () {
+	app.directive ("haveFood", [function () {
 		return {
 			restrict: 'E',
-			templateUrl: 'app/home/home.html',
-			controller: 'HomeController',
+			templateUrl: 'app//haveFood/haveFood.html',
+			controller: 'HaveFoodController as haveFoodController',
 			link: function ($scope, $el, $attr) {
 
 			}
 		}
 	}]);
-}());
+} ());
+

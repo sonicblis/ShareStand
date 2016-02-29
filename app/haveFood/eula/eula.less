@@ -1,0 +1,32 @@
+@import '../../../styles/layout';
+
+eula {
+  terms {
+    .block;
+    margin-bottom: 15px;
+
+    item {
+      .block;
+      clear: both;
+      margin-bottom: 5px;
+
+      i {
+        .block;
+        float: left;
+        vertical-align: top;
+        margin-top: 5px;
+        margin-right: 10px;
+
+        &.checked {
+          margin-right: 7px;
+          color: @headers;
+        }
+      }
+
+      div {
+        vertical-align: top;
+        display: table-cell;
+      }
+    }
+  }
+}

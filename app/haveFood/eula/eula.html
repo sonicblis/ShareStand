@@ -1,0 +1,19 @@
+<container class="col-lg-6 col-lg-offset-3 col-sm-12">
+	<heading>
+		Great, let's put it in for someone to find!
+	</heading>
+	<div>
+		<content>
+			First, let's take a moment to make sure we're on the same page.  Any food that you post as available needs to meet some criteria.
+		</content>
+		<terms>
+			<item ng-repeat="item in eulaController.criteriaItems">
+				<i ng-click="eulaController.toggleCriteriaItem(item)" class="fa" ng-class="{'fa-check-square-o checked':item.agreed, 'fa-square-o':!item.agreed}"></i>
+				<div>
+					{{item.terms}}
+				</div>
+			</item>
+		</terms>
+		<button ng-disabled="!eulaController.allAgreed" ng-click="eulaController.accept()" class="less-bright" ng-click="accept()">I'm In, Let's Go</button>
+	</div>
+</container>
