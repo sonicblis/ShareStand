@@ -3,7 +3,7 @@
 
 	var app = angular.module ('ShareStand');
 
-	app.service ('peopleService', ['$q', 'firebase', '$firebaseObject', 'firebaseArrayWatcher', 'logProvider', '$rootScope', function ($q, firebase, $firebaseObject, firebaseArrayWatcher, logProvider, $rootScope) {
+	app.service ('peopleService', ['$q', 'firebase', '$firebaseObject', 'firebaseArrayWatcher', 'logProvider', '$rootScope', '$state', function ($q, firebase, $firebaseObject, firebaseArrayWatcher, logProvider, $rootScope, $state) {
 		var _this = this,
 			userInfo = function (authData) {
 				this.name = authData.google.displayName;
@@ -55,8 +55,9 @@
 				if (!error) {
 					logProvider.info ('peopleService', 'user info retrieved from google', auth);
 					setUserInfo (auth);
-					if (typeof $rootScope.fromState !== 'undefined' && typeof $rootScope.fromState.state === 'string'){
-						$state.go($rootScope.fromState.state, $rootScope.fromState.stateParams);
+					loadUser(auth);
+					if ($rootScope.fromState){
+						$state.go($rootScope.fromState.state.name, $rootScope.fromState.stateParams);
 					}
 				}
 				else {

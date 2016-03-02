@@ -31,6 +31,15 @@ input[type='text']{
   height: auto;
   padding-top: 10px;
   line-height: 1.1em;
+  outline: 0;
+
+  &.ng-valid:not(.ng-pristine){
+    border: solid 1px #00AA00;
+  }
+
+  &.ng-invalid:not(.ng-pristine){
+    border: solid 1px #804b43;
+  }
 }
 
 button{

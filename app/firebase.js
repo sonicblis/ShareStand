@@ -6,6 +6,7 @@
 	app.constant ('firebase', {
 		root: new Firebase (baseUrl),
 		people: new Firebase (baseUrl + "/people"),
+		haveFood: new Firebase (baseUrl + "/haveFood"),
 		events: {
 			valueChanged: 'value',
 			childAdded: 'child_added',
