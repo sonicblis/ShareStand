@@ -3,21 +3,38 @@
 	<div class="col-lg-6">
 		<container>
 			<heading>Your listings</heading>
-			You currently don't have anything shared.
+			<span ng-show="haveFoodController.listings.count == 0">You currently don't have anything shared.</span>
+			<list-item ng-repeat="listing in haveFoodController.listings">
+				<i ng-click="haveFoodController.add(listing)" class="fa fa-plus-square btn btn-default"></i>
+				<i ng-click="haveFoodController.subtract(listing)" class="fa fa-minus-square btn btn-default"></i>
+				<display-text>
+					{{listing.quantity}} {{listing.quantityType}} {{listing.name}} <span ng-show="listing.expires">until {{listing.expires | date}}</span>
+				</display-text>
+			</list-item>
 		</container>
 	</div>
 	<div class="col-lg-6">
 		<container>
-			<heading>Share your stuff</heading>
-			<div class="form-group">
-				<label class="control-label">What do you have</label>
-				<input class="form-control" ng-model="haveFoodController.foodItem.name" placeholder="Eggs, Zuchini, Lettuce, etc." type="text">
-			</div>
-			<div class="form-group">
-				<label class="control-label">How many/much?</label>
-				<input class="form-control" ng-model="haveFoodController.foodItem.quantity" placeholder="2 dozen, 1 bushel, etc." type="text">
-			</div>
-			<button class="less-bright">Add</button>
+			<form ng-submit="haveFoodController.saveFood()">
+				<heading>Share your stuff</heading>
+				<div class="form-group col-lg-12">
+					<label class="control-label">What do you have</label>
+					<input class="form-control" ng-model="haveFoodController.foodItem.name" placeholder="Eggs, Zuchini, Lettuce, etc." type="text" required>
+				</div>
+				<div class="form-group col-lg-4">
+					<label class="control-label">How many?</label>
+					<input class="form-control" ng-model="haveFoodController.foodItem.quantity" type="number" required>
+				</div>
+				<div class="form-group col-lg-8">
+					<label class="control-label">&nbsp;</label>
+					<input class="form-control" ng-model="haveFoodController.foodItem.quantityType" placeholder="dozen, bushel, etc." type="text">
+				</div>
+				<div class="form-group col-lg-12">
+					<label class="control-label">Good for how many days?</label>
+					<input class="form-control" type="number" ng-model="haveFoodController.foodItem.goodForDays">
+				</div>
+				<button class="less-bright" type="submit">Add</button>
+			</form>
 		</container>
 	</div>
 </div>
