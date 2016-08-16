@@ -23,5 +23,8 @@
     "gulp-watch": "^4.2.4",
     "jquery": "^2.1.4",
     "ui-router-extras": "^0.1.0"
+  },
+  "dependencies": {
+    "angular-google-maps": "^2.3.4"
   }
 }

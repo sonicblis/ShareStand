@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 
-	var app = angular.module('ShareStand', ['firebase', 'ui.router', 'ct.ui.router.extras.dsr', 'ui.bootstrap']);
+	var app = angular.module('ShareStand', ['firebase', 'ui.router', 'ct.ui.router.extras.dsr', 'ui.bootstrap', 'uiGmapgoogle-maps']);
 	app.run(['logProvider', 'peopleService', '$rootScope', '$state', function(logProvider, peopleService, $rootScope, $state){
 		logProvider.setLoggingLevels({
 			warn: true,

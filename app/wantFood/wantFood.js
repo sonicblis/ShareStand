@@ -6,7 +6,7 @@
 	app.directive('wantFood',[function(){
 		return {
 			restrict: 'E',
-			controller: 'WantFoodController',
+			controller: 'WantFoodController as wantFood',
 			templateUrl: 'app/wantFood/wantFood.html'
 		}
 	}]);
